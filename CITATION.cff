@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, its data, or its results in academic work, please
+  cite this software and the associated paper when available.
+title: "S-alns: Reproducible Figure 1 Benchmark"
+type: software
+authors:
+  - family-names: Yang
+    given-names: Feiyu
+    email: feiyu@cafuc.edu.cn
+version: 1.0.0
+date-released: 2026-08-16
+license: MIT

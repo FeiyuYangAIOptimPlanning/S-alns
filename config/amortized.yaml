@@ -1,0 +1,71 @@
+# S-alns profile -- amortized (daily operational) cost parameters
+# 
+# Key change: investment costs amortized over asset lifetime (3yr/1000d).
+# This makes transportation costs ~54% of objective (vs ~23% in old params),
+# so routing quality improvements from S-alns become visible.
+#
+# Supporting evidence: DJI FlyCart30, Zelostech Z8, ElSayed 2024, McKinsey 2023.
+# See EXPERIMENT_LOG.md for full rationale.
+
+method: s_alns
+
+alns:
+  N_max: 500
+  pi: 100
+  Z0: 1000.0
+  alpha: 0.999
+  rho: 0.3
+  sigma: [5, 3, 1]
+  seed: 42
+  log_every: 100
+  structure_operator_floor: 0.03
+  restart_from_best_after_stuck: 40
+  restart_temperature_factor: 2.0
+
+init:
+  r_c: 0.3333333333
+
+destroy:
+  KRR_k: 3
+  ZR_xi: 0.09
+  Shaw_beta: [0.4, 0.3, 0.3]
+
+repair:
+  K_prescreen_gtrip: 10
+  K_prescreen_atrip: 8
+
+weight_floor: 0.01
+
+service_structure:
+  enabled: true
+  auto_cluster: true
+  q_min: 2
+  q_max_mode: sqrt_n
+  q_fixed: null
+  top_m_hubs: 3
+  graph_k_neighbors: 2
+  infeasible_penalty: 1000000.0
+  epsilon: 1.0e-6
+  random_seed: 42
+  max_kmedoids_iter: 50
+
+  alpha_uav: 1.0
+  alpha_ugv: 1.0
+  alpha_time: 1.0
+  alpha_weight: 1.0
+  alpha_open: 1.0
+
+  lambda_space: 1.0
+  lambda_release: 1.0
+  lambda_due: 1.0
+  lambda_weight: 1.0
+  lambda_hubpref: 1.0
+
+  omega_compactness: 1.0
+  omega_separation: 1.0
+  omega_hub_purity: 1.0
+  omega_risk: 1.0
+  omega_fragmentation: 0.5
+
+  djh_norm_scope: per_row
+

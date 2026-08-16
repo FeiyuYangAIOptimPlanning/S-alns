@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+results/generated/
+figures/figure1_reproduced.*
+figures/figure1_full.*
+figures/*_plot_data.csv

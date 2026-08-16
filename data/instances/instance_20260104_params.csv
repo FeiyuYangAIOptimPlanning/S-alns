@@ -1,0 +1,15 @@
+﻿Parameter,Value
+cost_H,50
+cost_D_inv,180
+cost_K_inv,90
+cost_D_trav,7
+cost_K_trav,4
+t_D_set,10
+t_K_set,20
+l_D,10.0
+l_K,20.0
+UAV_v,1.0
+UGV_v,0.1
+e_D,60.0
+e_K,180.0
+Day_Type,Weekday
